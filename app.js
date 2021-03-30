@@ -1,9 +1,11 @@
 let count=0;
+// I select button and board
 const board=document.querySelector(".board");
 const btns=document.querySelectorAll(".btn");
+// I created loop with forEach so we provide sustain ;
 btns.forEach(function(btn){
-    btn.addEventListener("click",function(r){
-        const styles=r.currentTarget.classList
+    btn.addEventListener("click",function(e){
+        const styles=e.currentTarget.classList
         if (styles.contains("decrease")) {
             count --
         }
