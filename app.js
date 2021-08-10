@@ -1,17 +1,17 @@
-let decrease=document.querySelector(".decrease");
-let reset=document.querySelector(".reset");
-let increase=document.querySelector(".increase");
-let board=document.querySelector(".board")
-let count=0;
-increase.addEventListener("click",()=>{
-    count +=1;
-    board.innerHTML=count
-})
-decrease.addEventListener("click",()=>{
-    count -=1;
-    board.innerHTML=count
-})
-reset.addEventListener("click",()=>{
-    count = 0;
-    board.innerHTML=count
+var h1 = document.querySelector("h1")
+var btn = document.querySelector(".btn")
+
+if(!localStorage.getItem("counter")){
+  localStorage.setItem("counter",0)
+}
+
+function count(){
+  let counter= localStorage.getItem("counter");
+  counter++
+  h1.innerHTML=counter;
+  localStorage.setItem("counter",counter)
+}
+btn.addEventListener("click",count)
+document.addEventListener("DOMContentLoaded",()=>{
+  h1.innerHTML=localStorage.getItem("counter")
 })
